@@ -1,5 +1,6 @@
 import { SearchOutlined, SettingOutlined } from "@ant-design/icons";
-const Header = () => {
+import "./header.scss";
+const HeaderMusic = () => {
   return (
     <>
       <div className="header">
@@ -9,21 +10,27 @@ const Header = () => {
               <button type="submit">
                 <SearchOutlined />
               </button>
-              <input type="text" placeholder="Bạn muốn nghe gì"/>
+              <input type="text" placeholder="Bạn muốn nghe gì" />
             </form>
           </div>
           <div className="header__search__suggest">
-            <p>Tim</p>
+            <p>Tìm kiếm xu hướng</p>
           </div>
         </div>
         <div className="header__login">
-          <SettingOutlined />
-          <button>
-            Đăng nhập
-          </button>
+          <div className="header__login__setting">
+            <SettingOutlined
+              style={{
+                color: "#fff",
+                fontSize: "24px",
+              }}
+            />
+          </div>
+          <div className="header__login__bar"></div>
+          <button className="header__login__btn">Đăng nhập</button>
         </div>
       </div>
     </>
   );
 };
-export default Header;
+export default HeaderMusic;

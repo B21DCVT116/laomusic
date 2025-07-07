@@ -1,0 +1,51 @@
+.carousel__wrap{
+  position: relative;
+  &:hover{
+    .carousel__wrap__button{
+      display: block;
+    }
+  }
+  &__button{
+    position: absolute;
+    display: none;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    &.left {
+      left: -20px;
+    }
+    &.right{
+      right: -20px;
+    }
+  }
+}
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    &.left {
+      left: 20px;
+    }
+
+    &.right {
+      right: -100px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+}

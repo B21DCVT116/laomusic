@@ -2,7 +2,7 @@
   margin: 0;
   display: block;
   background-image: linear-gradient(#3f1414,#161110 40%);
-  minWidth: 250px;
+  min-width: 250px;
   max-width: 300px;
   height: calc(100vh - 96px);
   &__logo{
@@ -20,11 +20,13 @@
     margin: 0;
     color: #fff;
     & hr{
-      border-bottom: 1px #ffffff12;
+      border-bottom: #ffffff12;
+      margin: 0;
     }
     &__ul{
       list-style-type: none;
       padding: 12px 0 32px;
+      margin: 0;
       overflow: hidden;
       & .active{
         background-color: #ffffff11;
@@ -42,10 +44,7 @@
         }
       }
       &__li{
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 0.5rem;
-        padding-right: 1.25rem;
+        padding: 12px 20px 12px 10px;
         margin-left: 12px;
         border-radius: 10px 0 0 10px;
         position: relative;
@@ -60,8 +59,11 @@
             transition: 0.3s ease-in-out;
           }
         }
+        &__icon{
+          font-size: 1.5rem;
+        }
         &__label{
-          margin: 4px 0 0 16px;
+          margin: 0 0 0 16px;
           padding: 0;
         }
       }
