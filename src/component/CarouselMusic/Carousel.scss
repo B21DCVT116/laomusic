@@ -1,3 +1,19 @@
+.carousel__title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & a{
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff4319;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+      color: #ff4319;
+      text-decoration: none;
+    }
+  }
+}
 .carousel__wrap{
   position: relative;
   &:hover{

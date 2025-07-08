@@ -4,12 +4,15 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "antd/dist/reset.css"; // hoặc 'antd/dist/antd.css' tùy phiên bản
 import CardMusic from "../CardMusic/CardMusic";
 import "./Carousel.scss";
+import CardList from "../CardList/CardList";
 
 const { Title } = Typography;
 
-const data = [
+//fetch api
+const dataCardMusic = [
   {
     title: "Hãy Trao Cho Anh",
+    subtitle: "Sơn Tùng M-TP",
     img: "../../../public/image/default-music.png",
   },
   {
@@ -43,16 +46,86 @@ const data = [
   {
     title: "...và 1 bài nữa",
     img: "../../../public/image/default-music.png",
-  }
+  },
 ];
 
-const CarouselMusic = ({item}) => {
+//fetch api
+const dataCardList = [
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+  {
+    img: "../../../public/image/auth-background.png",
+    alt: "Video thumbnail",
+    title: "ເພງເກົ່າມ່ວນໆໄດ້ໃຈຫຼາຍໆ",
+    channel: "NGA SENGAMPHONE",
+    duration: "5:37",
+  },
+];
+
+const CarouselMusic = ({ item }) => {
   const carouselRef = useRef(null);
   return (
     <div style={{ padding: "24px", background: "transparent" }}>
-      <Title style={{ color: "#fff", marginBottom: 16, fontSize: 22 }}>
-        {item.title}
-      </Title>
+      <div className="carousel__title">
+        <Title style={{ color: "#fff", marginBottom: 16, fontSize: 22 }}>
+          {item.title}
+        </Title>
+        <a href="/">Xem thêm &gt;</a>
+      </div>
       <div className="carousel__wrap">
         <button
           className="carousel__wrap__button left"
@@ -65,11 +138,15 @@ const CarouselMusic = ({item}) => {
           slidesToShow={6.5}
           slidesToScroll={1}
           infinite={false}
-          ref={carouselRef} 
+          ref={carouselRef}
         >
-          {data.map((item, idx) => (
-            <CardMusic item={item} key={idx} />
-          ))}
+          {(item.type === "music" || item.type === "list") &&
+            dataCardMusic.map((item, idx) => (
+              <CardMusic item={item} key={idx} />
+            ))}
+
+          {item.type === "youtube" &&
+            dataCardList.map((item, idx) => <CardList data={item} key={idx} />)}
         </Carousel>
         <button
           className="carousel__wrap__button right"

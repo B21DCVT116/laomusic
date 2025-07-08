@@ -8,14 +8,31 @@
     padding: 12px;
     margin-right: 14px;
     border-radius: 10px;
-    position: relative;
     transition: transform 0.3s ease-in-out;
-
     &__wrap {
       border-radius: 10px;
       overflow: hidden;
       margin: 0;
       position: relative;
+      &__content {
+        width: 100%;
+        height: fit-content;
+        &__title {
+          font-size: 16px;
+          font-weight: 500;
+          color: #fff;
+          padding: 12px 0 0 0;
+          margin: 0;
+          overflow: hidden;
+        }
+
+        &__subtitle {
+          font-size: 14px;
+          color: #b3b3b394;
+          overflow: hidden;
+          margin: 0;
+        }
+      }
       img {
         object-fit: cover;
         width: 100%;
@@ -29,7 +46,7 @@
       img {
         transform: scale(1.2);
       }
-      &::before {
+      .card__image__wrap::before {
         content: "";
         position: absolute;
         display: block;
@@ -40,7 +57,7 @@
         width: 40px;
         height: 40px;
         background-size: contain;
-        z-index: 2;
+        z-index: 10;
       }
     }
   }
